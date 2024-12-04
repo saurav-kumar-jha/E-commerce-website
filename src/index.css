@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shadowinp:focus-visible{
+    box-shadow: 0 0 20px rgb(63, 132, 134);
+}
