@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #e7e2e2;
+    color: black;
+}
+
 .shadowinp:focus-visible{
     box-shadow: 0 0 20px rgb(63, 132, 134);
 }

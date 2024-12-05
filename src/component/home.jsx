@@ -1,13 +1,17 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 import { Navbar } from "./navbar/nav"
+import { Productsection } from "./product/product"
 
 
 export const Home = () => {
+    const navigate = useLocation()
     return (
         <>
-            <div className="h-[100vh] w-[100%] bg-[#000000d2] text-white ">
+            <div>
                 <Navbar />
-                <Outlet/>
+                {
+                    navigate == "/" ? <Productsection/>:<Outlet/>
+                }
             </div>
         </>
     )

@@ -7,6 +7,18 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.line-clamp-2': {
+          display: '-webkit-box',
+          '-webkit-line-clamp': '2', /* Adjust to number of lines */
+          '-webkit-box-orient': 'vertical',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+        },
+      });
+    }
+  ],
 }
 

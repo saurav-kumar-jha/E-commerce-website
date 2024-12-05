@@ -6,7 +6,7 @@ export const Cartnav = ()=>{
     const navigate = useNavigate()
 
   const handlecart = () => {
-    navigate("/cart")
+    navigate("/products/cart")
   }
     return(
         <>

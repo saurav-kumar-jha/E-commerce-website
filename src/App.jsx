@@ -3,6 +3,12 @@ import './App.css'
 import { Errorpage } from './component/errorpage'
 import { Home } from './component/home'
 import { Login } from './component/authentication/login'
+import { Signup } from './component/authentication/signup'
+import { Forgetpass } from './component/authentication/forgetpass'
+import { Productsection } from './component/product/product'
+import { Cart } from './component/product/cart'
+import { Cartprovider } from './component/context'
+import { Cart2 } from './component/product/cart2.jsx'
 
 const router = createBrowserRouter([
   {
@@ -11,7 +17,25 @@ const router = createBrowserRouter([
     children:[{
       path:"/login",
       element:<Login/>
-    }]
+    },
+    {
+      path:"/signup",
+      element:<Signup/>
+    },
+    {
+      path:"/forget-password",
+      element:<Forgetpass/>
+    },
+    {
+      path:"/products",
+      element:<Productsection/>
+    },
+    {
+      path:"/products/cart",
+      element:<Cart2/>
+    }
+    
+  ]
   },
   {
     path:"/*",
@@ -22,7 +46,10 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
+     <Cartprovider>
+
         <RouterProvider router={router} />
+     </Cartprovider>
     </>
   )
 }
