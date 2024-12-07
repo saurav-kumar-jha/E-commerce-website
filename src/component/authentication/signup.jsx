@@ -49,17 +49,18 @@ export const Signup = () => {
         setTimeout(() => {
             navigate("/")            
         }, 2000);
+        setform2(false)
     }
     return (
         <>
-            <section className="h-[auto] w-[40%] border border-red-900 mx-auto px-[24px] py-[20px] mt-[20px] bg-[#8099b1] text-black ">
+            <section className="h-[auto] w-[90vw] md:w-[40%] border rounded  mx-auto px-[24px] py-[20px] mt-[20px] bg-[#a1b7c4d2] text-black ">
                 <h1 className="text-[28px] font-semibold text-center mb-13 ">Welcome to E-commerce</h1>
                 <p className="text-[20px] font-medium text-center mb-3 ">Please complete resigtration before shopping..</p>
                 <form className="h-[60%] w-full mt-[30px] ">
                     <label htmlFor="email" className="text-[17px] my-2 ">Name:</label><br />
-                    <input type="text" className="h-[auto] w-[68%] ml-[20px] my-[8px] outline-none px-[10px] py-[4px] text-[16px] font-semibold rounded-sm border border-[black] bg-[#ffffff94] shadowinp " name="name" value={inputvalue.name} onChange={handleinputchange} /> <br />
+                    <input type="text" className="h-[auto] w-[68%] ml-[20px] my-[8px] outline-purple-600 px-[10px] py-[4px] text-[16px] font-semibold rounded-sm border border-[black] bg-[#ffffff94] shadowinp " name="name" value={inputvalue.name} onChange={handleinputchange} /> <br />
                     <label htmlFor="email" className="text-[17px] my-2 ">Email:</label><br />
-                    <input type="email" className="h-[auto] w-[68%] ml-[20px] my-[8px] outline-none px-[10px] py-[4px] text-[16px] font-semibold rounded-sm border border-[black] bg-[#ffffff94] shadowinp " name="email" value={inputvalue.email} onChange={handleinputchange} /> <br />
+                    <input type="email" className="h-[auto] w-[68%] ml-[20px] my-[8px] outline-purple-600 px-[10px] py-[4px] text-[16px] font-semibold rounded-sm border border-[black] bg-[#ffffff94] shadowinp " name="email" value={inputvalue.email} onChange={handleinputchange} /> <br />
                     <label htmlFor="pass" className="text-[17px] my-2 ">Password:</label><br />
                     <div className="h-[auto] w-[68%] ml-[20px] my-[8px] outline-none px-2 rounded-sm border border-[black] bg-[#ffffff94] shadowinp flex items-center">
                         <input type={show} className="outline-none w-[90%] bg-transparent  py-[4px] text-[16px] font-semibold " name="pass" value={inputvalue.pass} onChange={handleinputchange} />
@@ -70,7 +71,7 @@ export const Signup = () => {
                         </span>
                     </div>
                     <label htmlFor="pass" className="text-[17px] my-2 ">Confirm Password:</label><br />
-                    <div className="h-[auto] w-[68%] ml-[20px] my-[8px] outline-none px-2 rounded-sm border border-[black] bg-[#ffffff94] shadowinp flex items-center">
+                    <div className="h-[auto] w-[68%] ml-[20px] my-[8px] outline-none px-2 rounded-sm border border-black focus:border-purple-600 bg-[#ffffff94] shadowinp flex items-center">
                         <input type={Show} className="outline-none w-[90%] bg-transparent  py-[4px] text-[16px] font-semibold " name="cnfpass" value={inputvalue.cnfpass} onChange={handleinputchange} />
                         <span className="text-[20px] cursor-pointer w-[10%] ">
                             {
@@ -78,9 +79,9 @@ export const Signup = () => {
                             }
                         </span>
                     </div>
-                    <div className="w-full px-2 flex justify-between ">
-                        <button className={`h-[auto] w-[48%] rounded bg-[blue] border border-blue-800 my-[15px] text-white text-[24px] font-semibold `} onClick={handlesubmit} >SUBMIT</button>
-                        <button className={`h-[auto] w-[48%] rounded bg-[blue] border border-blue-800 my-[15px] text-white text-[24px] font-semibold `} type="reset" onClick={handlereset} >RESET</button>
+                    <div className="w-full px-2 md:flex block justify-between ">
+                        <button className={`h-[auto] w-[48%] rounded bg-purple-600 border border-purple-800 my-[15px] text-white text-[24px] font-semibold `} onClick={handlesubmit} >SUBMIT</button><br />
+                        <button className={`h-[auto] w-[48%] rounded bg-purple-600 border border-purple-800 my-[15px] text-white text-[24px] font-semibold `} type="reset" onClick={handlereset} >RESET</button>
                     </div>
                     <div className={` ${form2 ? "block" : "hidden"} `}>
                         <label htmlFor="otp">Enter OTP:</label>

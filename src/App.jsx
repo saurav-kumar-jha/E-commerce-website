@@ -6,9 +6,10 @@ import { Login } from './component/authentication/login'
 import { Signup } from './component/authentication/signup'
 import { Forgetpass } from './component/authentication/forgetpass'
 import { Productsection } from './component/product/product'
-import { Cart } from './component/product/cart'
-import { Cartprovider } from './component/context'
-import { Cart2 } from './component/product/cart2.jsx'
+import { Cart } from './component/product/cart2.jsx'
+import 'react-slideshow-image/dist/styles.css'
+import { SingleProduct } from './component/product/singleProduct.jsx'
+import ContactUs from './component/contact.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,13 +33,20 @@ const router = createBrowserRouter([
     },
     {
       path:"/products/cart",
-      element:<Cart2/>
+      element:<Cart/>
+    },
+    {
+      path:"/products/:id",
+      element:<SingleProduct/>
+    },
+    {
+      path:"/contact",
+      element:<ContactUs/>
     }
-    
   ]
   },
   {
-    path:"/*",
+    path:"*",
     component:<Errorpage/>
   }
 ])
@@ -46,10 +54,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-     <Cartprovider>
-
         <RouterProvider router={router} />
-     </Cartprovider>
     </>
   )
 }

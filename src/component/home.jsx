@@ -1,17 +1,21 @@
 import { Outlet, useLocation } from "react-router-dom"
 import { Navbar } from "./navbar/nav"
-import { Productsection } from "./product/product"
+import { Footer } from "./footer/footer"
+import { Navigation } from "../navigation"
+import { useProductContext } from "./context/productContext"
 
 
 export const Home = () => {
     const navigate = useLocation()
+    const {name} = useProductContext()
     return (
         <>
-            <div>
+            <div className="overflow-x-hidden" >
                 <Navbar />
                 {
-                    navigate == "/" ? <Productsection/>:<Outlet/>
+                    navigate.pathname == "/" ? <Navigation/> :<Outlet/>
                 }
+                <Footer/>
             </div>
         </>
     )
