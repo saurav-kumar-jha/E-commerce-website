@@ -8,8 +8,8 @@ export const Navbar = () => {
   return (
     <>
       <div className="flex border border-transparent h-[12vh] w-[100%] justify-evenly items-center bg-[#666b6dbe] ">
-        <div>
-          <p>Logo</p>
+        <div className="h-[80%] w-auto rounded-full ">
+          <img src="/logo-removebg-preview.png" alt="#" className="h-[100%] rounded-full w-[auto] scale-150"  />
         </div>
        <Search/>
        <NavList/>

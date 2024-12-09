@@ -7,7 +7,6 @@ import { useProductContext } from "./context/productContext"
 
 export const Home = () => {
     const navigate = useLocation()
-    const {name} = useProductContext()
     return (
         <>
             <div className="overflow-x-hidden" >

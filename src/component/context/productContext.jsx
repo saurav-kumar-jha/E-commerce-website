@@ -4,15 +4,15 @@ import reducer from "../reducer/productReducer"
 
 
 const Appcontext = createContext()
-const API = "https://api.pujakaitem.com/api/products";
+const API = "https://dummyjson.com/products"
 
 const initialState = {
     isLoading:false,
     isError:false,
-    featuredProduct:[],
     products:[],
     isSingleLoading:false,
-    singleProduct:{}
+    singleProduct:{},
+    cart:{}
 }
 
 const AppProvider = ({children})=>{
@@ -21,7 +21,8 @@ const AppProvider = ({children})=>{
         dispatch({type:"SET_LOADING"})
         try {
             const res = await axios.get(url)
-            const products = res.data       
+            const products = res.data 
+                  
             dispatch({type:"GET_PRODUCTS" , payload: products}) 
         } catch (error) {
             dispatch({type:"API_ERROR"})
@@ -32,17 +33,31 @@ const AppProvider = ({children})=>{
         dispatch({type:"SET_SINGLE_LOADING"})
         try {
             const res = await axios.get(url)
-            const SingleProduct = res.data       
+            const SingleProduct = res.data 
+            // console.log(SingleProduct);
+                  
             dispatch({type:"SET_SINGLE_PRODUCTS" , payload: SingleProduct})
         } catch (error) {
             dispatch({type:"SINGLE_ERROR"})
+        }
+    }
+
+    const getProductCart = async (url)=>{
+        dispatch({type:"SET_LOADING"})
+        try {
+            const res = await axios.get(url)
+            const Cart = res.data
+            console.log(Cart);            
+            dispatch({type:"SET_CART", payload:Cart})
+        } catch (error) {
+            dispatch({type:"API_ERROR"})
         }
     }
     useEffect(()=>{
         getProvider(API)
     },[])
     return(
-        <Appcontext.Provider value={{...state,getSingleProduct}}>
+        <Appcontext.Provider value={{...state,getSingleProduct,getProductCart}}>
             {children}
         </Appcontext.Provider>
     )

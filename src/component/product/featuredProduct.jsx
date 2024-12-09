@@ -16,7 +16,7 @@ export const FeaturedProduct = () => {
                         <ul className="h-auto border flex px-4 my-4 ml-3 py-4 mx-auto " >
                          <div className="h-auto w-[auto] px-3 py-2 " >
                             <ul className="flex">
-                                <ShowProduct product={featuredProduct}  />
+                                {/* <ShowProduct product={featuredProduct}  /> */}
                             </ul>                        
                              </div>
                          </ul>
