@@ -34,7 +34,7 @@ export const SingleProduct = () => {
         <h1 className="text-lg mx-2 my-3 text-red-600 "><NavLink to="/" >home</NavLink>/<NavLink to="/products">product</NavLink>/<NavLink>{item.title}</NavLink>  </h1>
         <section className="h-auto w-[80vw] mx-auto md:flex block md:justify-between " >
           <div className=" md:w-[48%] w-[80vw] mx-auto md:h-[100vh] h-[300px] " >
-            <img src={item.images} alt="" className="md:h-[400px] h-[90%] w-fit md:w-[90%] mx-auto " />
+            <img src={item.images[0]} alt="" className="md:h-[400px] h-[90%] w-fit md:w-[90%] mx-auto " />
           </div>
           <div className="border h-auto py-4 px-2 md:w-[50%] w-[80vw] mx-auto " >
             <h1 className="md:text-2xl text-xl my-1 h-[auto] font-semibold cursor-pointer hover:text-blue-600 text-ellipsis overflow-hidden  -webkit-box ">{item.title} {item.description} </h1>
@@ -79,14 +79,14 @@ export const SingleProduct = () => {
               <p className="text-lg font-medium" ><span className="text-lg font-semibold">Category:</span> {item.category} </p>
               <p className="text-lg font-medium" ><span className="text-lg font-semibold">Product Id:</span> {item.sku} </p>
               <p className="text-lg font-medium" ><span className="text-lg font-semibold">Weight:</span> {item.weight} </p>
-              <p className="text-lg font-medium" ><span className="text-lg font-semibold">Dimesion:</span>{item.dimesions  && item.dimesions.length > 0 && (item.dimensions.height * item.dimensions.width * item.dimensions.depth )} </p>
+              <p className="text-lg font-medium" ><span className="text-lg font-semibold">Dimesion:</span>{item.dimensions.height} X  {item.dimensions.width} X  {item.dimensions.depth} </p>
             </div>
             <hr className="h-[2px] w-[100%] mx-auto bg-slate-500 my-2 " />
 
           </div>
         </section>
         <div className=" w-[80vw] h-auto my-8 mx-auto ">
-          {/* <Review url={item.reviews}/> */}
+          <Review url={item.reviews}/>
         </div>
 
       </div>
