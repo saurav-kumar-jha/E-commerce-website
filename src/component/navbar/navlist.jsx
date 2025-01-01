@@ -36,6 +36,8 @@ export const NavList = ()=>{
                 <NavLink to="/profile" className={ "text-[18px] flex justify-center items-center font-medium h-[100%] w-auto py-2 border border-transparent px-4 rounded-full hover:bg-[#829292] bg-[#a6afaf7a] text-center my-2 duration-200"}  >Profile<FiChevronRight /></NavLink>
 
                 <NavLink to="/signup" className={ "text-[18px] flex justify-center items-center font-medium h-[100%] w-auto py-2 border border-transparent px-4 rounded-full hover:bg-[#829292] bg-[#a6afaf7a] text-center my-2 duration-200"}  >Sign up</NavLink>
+
+                <NavLink to="/addProduct" className={ "text-[18px] flex justify-center items-center font-medium h-[100%] w-auto py-2 border border-transparent px-4 rounded-full hover:bg-[#829292] bg-[#a6afaf7a] text-center my-2 duration-200"}  >Add Product</NavLink>
                 </div>
             </ul>
         </>

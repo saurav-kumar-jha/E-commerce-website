@@ -6,10 +6,10 @@ import { useProductContext } from "./context/productContext"
 
 
 export const Home = () => {
-    const navigate = useLocation()
+    const navigate = useLocation() 
     return (
         <>
-            <div className="overflow-x-hidden" >
+            <div className="overflow-x-hidden" > 
                 <Navbar />
                 {
                     navigate.pathname == "/" ? <Navigation/> :<Outlet/>
